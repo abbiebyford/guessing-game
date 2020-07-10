@@ -1,15 +1,16 @@
-files=( * )
+files=$(ls -l | wc -l)
+let files=$files-1
 
 function guessinggame {
 echo "How many files are in the current directory?"
 echo "Please type in your guess"
 while read response; do
-	if [[ $response -eq ${#files[@]} ]]; then
+	if [[ $response -eq $files ]]; then
 		break;
 	else
-	if [[ $response -gt ${#files[@]} ]]; then
+	if [[ $response -gt $files ]]; then
 		echo "Your guess is too high, guess again: "
-	elif [[ $response -lt ${#files[@]} ]]; then
+	elif [[ $response -lt $files ]]; then
 		echo "Your guess is too low, guess again: "
 	fi
 	fi
