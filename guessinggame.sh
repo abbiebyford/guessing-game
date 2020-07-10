@@ -8,9 +8,9 @@ while read response; do
 		break;
 	else
 	if [[ $response -gt ${#files[@]} ]]; then
-		echo -n "Your guess is too high, guess again: "
+		echo "Your guess is too high, guess again: "
 	elif [[ $response -lt ${#files[@]} ]]; then
-		echo -n "Your guess is too low, guess again: "
+		echo "Your guess is too low, guess again: "
 	fi
 	fi
 done
